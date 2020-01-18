@@ -16,7 +16,7 @@ namespace debugws
 
         if (pivot > 1)
         {
-          Quick_Sort(arr, left, pivot - 2);
+          Quick_Sort(arr, left, pivot - 1);//changed subtraction by 2 to subtraction by 1
         }
 
         if (pivot + 1 < right)
@@ -35,7 +35,7 @@ namespace debugws
 
         while (arr[left] < pivot)
         {
-          left += 2;
+          left += 1;//changed double increment to single increment
         }
 
         while (arr[right] > pivot)
@@ -50,9 +50,9 @@ namespace debugws
             return right;
           }
 
-          int temp = arr[left];
-          arr[right] = temp;
-          arr[left] = arr[right];
+            int temp = arr[left];//fixed swapping procedure
+            arr[left] = arr[right];
+            arr[right] = temp;
         }
         else
         {
